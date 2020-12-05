@@ -10,9 +10,8 @@ class Day5:
         txt = f.read()
         self.input = txt.splitlines()
 
-    def parse_seat(self, seat_string):
-        row = 0
-        col = 0
+    @staticmethod
+    def parse_seat(seat_string):
         row_range = list(range(0, 128))
         col_range = list(range(0, 8))
         for letter in seat_string:
@@ -24,7 +23,8 @@ class Day5:
                 col_range = col_range[0:int(len(col_range)/2)]
             elif letter == 'R':
                 col_range = col_range[int(len(col_range)/2):]
-
+            else:
+                raise ArithmeticError
         return row_range[0], col_range[0]
 
     def solve_part_1(self):
