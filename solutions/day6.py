@@ -1,6 +1,3 @@
-import re
-
-
 class Day6:
     def __init__(self):
         self.input = []
