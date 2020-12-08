@@ -16,10 +16,7 @@ class Day8:
         instructions = []
         for line in raw_input:
             parsed = line.split(" ")
-            instruction = {}
-            instruction['cmd'] = parsed[0]
-            instruction['val'] = int(parsed[1].replace("+", ""))
-            instruction['run'] = False
+            instruction = {'cmd': parsed[0], 'val': int(parsed[1]), 'run': False}
             instructions.append(instruction)
         self.input = instructions
 
@@ -37,14 +34,11 @@ class Day8:
                 cmd = instructions[cur]['cmd']
                 if cmd == 'nop':
                     cur += 1
-                    pass
                 elif cmd == 'acc':
                     acc += instructions[cur]['val']
                     cur += 1
-                    pass
                 elif cmd == 'jmp':
                     cur += instructions[cur]['val']
-                    pass
         except IndexError:
             return cur, acc, 'list_oob'
 
