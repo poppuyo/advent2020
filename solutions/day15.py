@@ -1,11 +1,8 @@
 class Day15:
     def __init__(self):
         self.input = []
-        self.memory = {}
         self.load_input()
-        # print(self.input)
         print(f'pt1: {self.solve_part_1(2020)}')
-        # print(self.memory)
         print(f'pt2: {self.solve_part_2()}')
 
     def load_input(self):
@@ -37,11 +34,11 @@ class Day15:
         else:
             ret = 0
 
+        # probable opt: retain only the last 2 values in turn list
         if ret not in prev_dict.keys():
             prev_dict[ret] = [turn]
         else:
             prev_dict[ret].append(turn)
-        # print(f't{turn},n:{num},ret:{ret}')
         return ret
 
     def solve_part_2(self):
