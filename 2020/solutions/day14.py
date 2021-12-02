@@ -8,7 +8,7 @@ class Day14:
         self.memory = {}
         self.load_input()
         self.memory2 = copy.deepcopy(self.memory)
-        # print(self.input)
+        # print(self.inputs)
         print(f'pt1: {self.solve_part_1()}')
         # print(self.memory)
         print(f'pt2: {self.solve_part_2()}')
